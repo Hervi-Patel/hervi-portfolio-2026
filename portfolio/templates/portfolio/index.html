@@ -1,0 +1,222 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hervi Portfolio</title>
+
+    <link rel="icon" href="data:,">
+
+    <link rel="stylesheet" href="{% static 'portfolio/style.css' %}">
+
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+
+    <nav class="navbar">
+
+    <div class="logo">
+        HP
+    </div>
+
+    <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+    <div class="bg-animation"></div>
+    <div class="bg-animation2"></div>
+
+    <section class="hero hidden" id="home">
+
+        <h1>HERVI PATEL</h1>
+
+        <p id="typing-text"></p>
+
+        <div class="hero-buttons">
+
+    <a href="#about" class="hero-btn">
+        Explore Portfolio
+    </a>
+
+    <a href="{% static 'portfolio/resume/resume.pdf' %}"
+       class="hero-btn"
+       download>
+
+        Download Resume
+
+    </a>
+
+</div>
+
+    </section>
+
+    <section class="about hidden" id="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        I'm an entry-level Python Developer and MSc IT graduate who enjoys building software and exploring both backend and frontend development.
+
+I work with Python, Django, SQL, and web technologies, and I enjoy turning ideas into practical projects while continuously learning and improving my development skills.
+
+    </p>
+
+</section>
+
+<section class="skills hidden" id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skills-container">
+
+        <div class="skill-card">
+            <h3>Programming</h3>
+            <p>Python, SQL, HTML, CSS</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Backend</h3>
+            <p>Django, Django REST Framework, REST APIs</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Databases</h3>
+            <p>PostgreSQL, MySQL, SQLite</p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Tools</h3>
+            <p>Git, GitHub, VS Code</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="projects hidden" id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="projects-container">
+
+        <!-- 1. MediCore HMS -->
+        <div class="project-card">
+            <h3>MediCore HMS — Hospital/Lab Management System</h3>
+            <p>
+                A live multi-tenant hospital and lab management system that I am
+                currently studying under senior developer guidance. I am learning
+                the Django REST backend, PostgreSQL database, React frontend,
+                Redis, authentication, and API flow work together in a real-world application.
+            </p>
+            <small>Python · Django REST Framework · PostgreSQL · React · Redis</small>
+        </div>
+
+        <!-- 2. Web Kiosk -->
+        <div class="project-card">
+            <h3>Web Kiosk System</h3>
+            <p>
+                An independently developed restaurant ordering platform with
+                separate Admin, Chef, and Customer roles. The system includes
+                menu management, cart and order handling, kitchen workflow,
+                and simulated payment processing.
+            </p>
+            <small>Python · Django · PostgreSQL · HTML/CSS · Bootstrap</small>
+        </div>
+
+        <!-- 3. Quiz System -->
+        <div class="project-card">
+            <h3>Quiz Management System</h3>
+            <p>
+                A team-developed web-based quiz platform with separate Admin,
+                Faculty, and Student roles, authentication, timed quiz attempts,
+                automatic result evaluation, and result tracking.
+            </p>
+            <small>PHP · MySQL · JavaScript · AJAX · Bootstrap</small>
+        </div>
+
+        <!-- 4. Movie Ticket Booking -->
+        <div class="project-card">
+            <h3>Movie Ticket Booking System</h3>
+            <p>
+                A team-developed movie booking project featuring user registration,
+                login, role-based access, movie management, and browser-based
+                data persistence using localStorage.
+            </p>
+            <small>AngularJS · HTML · CSS · JavaScript</small>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contact hidden" id="contact">
+
+    <h2>Let's Connect</h2>
+
+    <p class="contact-intro">
+        Interested in working together, discussing a project, or talking
+        about a software development opportunity? Feel free to send me a message.
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <input 
+            type="text" 
+            name="name" 
+            placeholder="Your Name"
+            autocomplete="name"
+            required>
+
+        <input 
+            type="email" 
+            name="email" 
+            placeholder="Your Email"
+            autocomplete="email"
+            required>
+
+        <textarea 
+            name="message" 
+            placeholder="Your Message"
+            autocomplete="off"
+            required></textarea>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+</section>
+
+ <footer class="footer">
+
+    <h2>Connect With Me</h2>
+
+    <div class="social-links">
+
+        <a href="https://github.com/Hervi-Patel" target="_blank">GitHub</a>
+
+        <a href="https://www.linkedin.com/in/hervi-patel" target="_blank">LinkedIn</a>
+
+        <a href="https://www.instagram.com/hervi_j_01?igsh=MWlyNWRndHM3NDVqYg%3D%3D&utm_source=qr" target="_blank">Instagram</a>
+
+        <a href="mailto:hervijpatel2352@gmail.com" target="_blank">Email</a>
+
+    </div>
+
+    <p class="footer-text">
+        © 2026 Hervi Patel | Futuristic Portfolio
+    </p>
+
+</footer>
+
+<script src="{% static 'portfolio/script.js' %}"></script>
+</body>
+</html>
